@@ -1,0 +1,8 @@
+/Users/jootu/dotnet/sms-decoder/lib/bin/Debug/netstandard2.0/lib.deps.json
+/Users/jootu/dotnet/sms-decoder/lib/bin/Debug/netstandard2.0/lib.dll
+/Users/jootu/dotnet/sms-decoder/lib/bin/Debug/netstandard2.0/lib.pdb
+/Users/jootu/dotnet/sms-decoder/lib/obj/Debug/netstandard2.0/lib.csproj.CoreCompileInputs.cache
+/Users/jootu/dotnet/sms-decoder/lib/obj/Debug/netstandard2.0/lib.AssemblyInfoInputs.cache
+/Users/jootu/dotnet/sms-decoder/lib/obj/Debug/netstandard2.0/lib.AssemblyInfo.cs
+/Users/jootu/dotnet/sms-decoder/lib/obj/Debug/netstandard2.0/lib.dll
+/Users/jootu/dotnet/sms-decoder/lib/obj/Debug/netstandard2.0/lib.pdb

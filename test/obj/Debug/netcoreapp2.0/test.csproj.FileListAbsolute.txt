@@ -1,0 +1,12 @@
+/Users/jootu/dotnet/sms-decoder/test/bin/Debug/netcoreapp2.0/test.deps.json
+/Users/jootu/dotnet/sms-decoder/test/bin/Debug/netcoreapp2.0/test.runtimeconfig.json
+/Users/jootu/dotnet/sms-decoder/test/bin/Debug/netcoreapp2.0/test.runtimeconfig.dev.json
+/Users/jootu/dotnet/sms-decoder/test/bin/Debug/netcoreapp2.0/test.dll
+/Users/jootu/dotnet/sms-decoder/test/bin/Debug/netcoreapp2.0/test.pdb
+/Users/jootu/dotnet/sms-decoder/test/bin/Debug/netcoreapp2.0/lib.dll
+/Users/jootu/dotnet/sms-decoder/test/bin/Debug/netcoreapp2.0/lib.pdb
+/Users/jootu/dotnet/sms-decoder/test/obj/Debug/netcoreapp2.0/test.csproj.CoreCompileInputs.cache
+/Users/jootu/dotnet/sms-decoder/test/obj/Debug/netcoreapp2.0/test.AssemblyInfoInputs.cache
+/Users/jootu/dotnet/sms-decoder/test/obj/Debug/netcoreapp2.0/test.AssemblyInfo.cs
+/Users/jootu/dotnet/sms-decoder/test/obj/Debug/netcoreapp2.0/test.dll
+/Users/jootu/dotnet/sms-decoder/test/obj/Debug/netcoreapp2.0/test.pdb
