@@ -1,0 +1,11 @@
+[DEFAULT]
+BASEURL=
+
+[InternetShortcut]
+URL=http://www.smartposition.nl/resources/sms_pdu.html
+WorkingDirectory=
+ShowCommand=
+IconIndex=
+IconFile=
+Modified=
+HotKey=
