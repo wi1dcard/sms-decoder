@@ -8,7 +8,7 @@ namespace test {
         /// </summary>
         /// <param name="msg"></param>
         public static void onCompleteMsg (SmsDecoder.Message msg) {
-            Console.WriteLine ("Receiving sms from : +{0}, content : {1}", msg.senderNumber, msg.content);
+            Console.WriteLine ("Receiving sms from : +{0}, content : {1}\n", msg.senderNumber, msg.content);
         }
 
         static void Main (string[] args) {
@@ -28,7 +28,13 @@ namespace test {
                 if (string.IsNullOrWhiteSpace (sms)) {
                     break;
                 }
-                poolDecode (sms);
+
+                Console.WriteLine ("Receive PDU data : {0}", sms);
+                try {
+                    poolDecode (sms);
+                } catch (Exception ex) {
+                    Console.Error.WriteLine ("Error : {0}", ex.Message);
+                }
             }
             while (true);
         }

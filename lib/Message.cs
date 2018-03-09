@@ -89,7 +89,7 @@ namespace SmsDecoder {
             var message = new Message ();
             IDecoder msgDecoder;
             var esBits = message.getBits (pdu.encodingScheme);
-            if (!esBits[6] && !esBits[7]) {
+            //if (!esBits[6] && !esBits[7]) {
                 if (esBits[5]) {
                     msgDecoder = new UnicodeDecoder ();
                 } else {
@@ -109,9 +109,9 @@ namespace SmsDecoder {
                             throw new Exception ("Unknown PDU Message Encoding Scheme!");
                     }
                 }
-            } else {
-                throw new Exception ("Unknown PDU Message Encoding Scheme!");
-            }
+            //} else {
+            //    throw new Exception ("Unknown PDU Message Encoding Scheme!");
+            //}
             message.content = msgDecoder.Decode (pdu.data).Trim ('\0');
 
             message.smscNumber = message.byteReverse (pdu.smscNumber);
