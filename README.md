@@ -13,7 +13,7 @@ cd sms-decoder
 ./test.sh
 ```
 
-If you have a GPRS device, you may connect it via serial, and modify `ser.py`:
+If you have a GPRS device (for example: SIM900A), you may connect it via serial, and modify `ser.py`:
 
 ```python
 ser = serial.Serial("<YOUR_DEVICE_SERIAL>")
@@ -68,5 +68,7 @@ For full source, please reference to `test/Program.cs`.
 Thanks for using, please star if helps. And do not hesitate to report any issue.
 
 Hope you enjoy it.
+
+![](https://i.loli.net/2018/03/09/5aa2a82bbd4b2.jpg)
 
 -- Wi1dcard
