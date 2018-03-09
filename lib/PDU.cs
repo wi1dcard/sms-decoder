@@ -2,6 +2,9 @@ using System;
 using System.IO;
 
 namespace SmsDecoder {
+    /// <summary>
+    /// pdu parsed data, for more: doc/sms_pdu-mode.pdf
+    /// </summary>
     public class PDU {
         private PDU () {
 

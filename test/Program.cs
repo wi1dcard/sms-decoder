@@ -3,7 +3,6 @@ using System.IO;
 
 namespace test {
     class Program {
-
         public static void onCompleteMsg (SmsDecoder.Message msg) {
             Console.WriteLine ("recv msg from : +{0}, content : {1}", msg.senderNumber, msg.content);
         }

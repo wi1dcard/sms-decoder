@@ -3,20 +3,59 @@ using System.Linq;
 using SmsDecoder.Decoder;
 
 namespace SmsDecoder {
+    /// <summary>
+    /// message class contains a decoded sms
+    /// </summary>
     public class Message {
         internal Message () {
 
         }
 
+        /// <summary>
+        /// an address(number) of sms center
+        /// </summary>
         public string smscNumber;
+
+        /// <summary>
+        /// an address(number) of sms sender
+        /// </summary>
         public string senderNumber;
+
+        /// <summary>
+        /// timestamp of sms center, this value should be sms sent time of local timezone by default
+        /// </summary>
         public DateTime dateTime;
+
+        /// <summary>
+        /// sms content, maybe a part
+        /// </summary>
         public string content;
+
+        /// <summary>
+        /// for long sms which be split, this value will be true
+        /// </summary>
         public bool isSplit;
+
+        /// <summary>
+        /// unique identifier of long sms which be split
+        /// </summary>
         public string splitId;
+
+        /// <summary>
+        /// number of parts that long sms split into
+        /// </summary>
         public int splitCount;
+
+        /// <summary>
+        /// index of split long sms, when <see cref="isSplit"/> is true
+        /// </summary>
         public int splitIndex;
 
+        /// <summary>
+        /// reverse bytes, for example: 0x0F0E -> 0xF0E0
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
         protected string byteReverse (byte[] num) {
             string hex = BitConverter.ToString (num).Replace ("-", "");
             var reversed = Enumerable.Range (0, hex.Length)
@@ -25,6 +64,11 @@ namespace SmsDecoder {
             return String.Join ("", reversed).Replace ("F", "");
         }
 
+        /// <summary>
+        /// get all bits of a number
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         protected bool[] getBits (object data) {
             var size = System.Runtime.InteropServices.Marshal.SizeOf (data);
             var bits = new bool[size * 8];
@@ -36,6 +80,11 @@ namespace SmsDecoder {
             return bits;
         }
 
+        /// <summary>
+        /// decode message from parsed pdu data
+        /// </summary>
+        /// <param name="pdu"></param>
+        /// <returns></returns>
         public static Message Decode (PDU pdu) {
             var message = new Message ();
             IDecoder msgDecoder;

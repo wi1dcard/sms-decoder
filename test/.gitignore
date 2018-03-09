@@ -10,6 +10,7 @@ nupkg/
 
 # User-specific files
 *.suo
+*.cache
 *.user
 *.userosscache
 *.sln.docstates

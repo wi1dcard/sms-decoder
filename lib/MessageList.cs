@@ -3,7 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace SmsDecoder {
+    /// <summary>
+    /// message list of parts of long sms
+    /// </summary>
     public class MessageList : List<Message> {
+        /// <summary>
+        /// add a message into list
+        /// </summary>
+        /// <param name="item"></param>
         public new void Add (Message item) {
             foreach (var m in this) {
                 if (m == item) {
@@ -23,13 +30,19 @@ namespace SmsDecoder {
 
         public event MessageCompletedHandler MessageCompleted;
 
+        /// <summary>
+        /// merge parts of split messages
+        /// </summary>
+        /// <returns></returns>
         public Message Merge () {
             var fullMsg = new Message () {
                 smscNumber = this [0].smscNumber,
                 senderNumber = this [0].senderNumber,
                 dateTime = this [0].dateTime,
                 content = "",
-                isSplit = false
+                isSplit = false,
+                splitId = this[0].splitId,
+                splitCount = this[0].splitCount
             };
             this.Sort ((x, y) => {
                 if (x.splitIndex == y.splitIndex) {
