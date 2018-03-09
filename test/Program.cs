@@ -8,14 +8,18 @@ namespace test {
         /// </summary>
         /// <param name="msg"></param>
         public static void onCompleteMsg (SmsDecoder.Message msg) {
-            Console.WriteLine ("recv msg from : +{0}, content : {1}", msg.senderNumber, msg.content);
+            Console.WriteLine ("Receiving sms from : +{0}, content : {1}", msg.senderNumber, msg.content);
         }
 
         static void Main (string[] args) {
             var pool = new SmsDecoder.MessagePool (Program.onCompleteMsg);
+            var poolDecode = new Action<string> ((sms) => pool.Add (SmsDecoder.Helper.Decode (sms)));
 
             foreach (var s in args) {
-                pool.Add (SmsDecoder.Helper.Decode (s));
+                poolDecode (s);
+            }
+            if (args.Length > 0) {
+                return;
             }
 
             Console.WriteLine ("Waiting for PDU hex string...");
@@ -24,8 +28,9 @@ namespace test {
                 if (string.IsNullOrWhiteSpace (sms)) {
                     break;
                 }
-                pool.Add (SmsDecoder.Helper.Decode (sms));
-            } while (true);
+                poolDecode (sms);
+            }
+            while (true);
         }
     }
 }
