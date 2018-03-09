@@ -18,6 +18,7 @@ namespace test {
                 pool.Add (SmsDecoder.Helper.Decode (s));
             }
 
+            Console.WriteLine ("Waiting for PDU hex string...");
             do {
                 string sms = Console.ReadLine ();
                 if (string.IsNullOrWhiteSpace (sms)) {
